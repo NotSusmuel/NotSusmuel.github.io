@@ -104,6 +104,28 @@
             border-color: rgba(99, 102, 241, 0.3);
         }
 
+        /* Stylings für private/deaktivierte Karten */
+        .card.private {
+            opacity: 0.5; /* Macht alles durchsichtiger */
+            filter: grayscale(100%); /* Alles grau */
+            pointer-events: none; /* Verhindert Klicks auf der ganzen Karte */
+            position: relative;
+        }
+        
+        /* Optional: Ein "Privat" Badge oben rechts */
+        .card.private::after {
+            content: "PRIVAT";
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            border: 1px solid #aaa;
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #aaa;
+        }
+
         .card h3 {
             font-size: 1.5rem;
             margin-bottom: 10px;
@@ -153,6 +175,13 @@
             color: #000;
         }
         .btn-mc:hover { background-color: #22a351; }
+        
+        /* Style für deaktivierte Buttons */
+        .btn-disabled {
+            background-color: #334155;
+            color: #64748b;
+            cursor: not-allowed;
+        }
 
         /* Contact Footer */
         footer {
@@ -229,7 +258,7 @@
                 </a>
             </div>
 
-            <div class="card">
+            <div class="card private">
                 <div>
                     <h3>Fisy</h3>
                     <div class="tags">
@@ -242,9 +271,9 @@
                         Bessere Übersicht und UX.
                     </p>
                 </div>
-                <a href="https://github.com/NotSusmuel/fisy" target="_blank" class="btn btn-primary">
-                    Auf GitHub ansehen
-                </a>
+                <span class="btn btn-disabled">
+                    Privat / In Arbeit
+                </span>
             </div>
 
             <div class="card">
