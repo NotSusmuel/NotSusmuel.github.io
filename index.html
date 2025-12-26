@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Samuel Heynen - Portfolio. Entwickler, Linux-Enthusiast und Schüler. Projekte in Python, Java und Web-Development.">
     <title>Samuel Heynen | Portfolio</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Marked for Markdown parsing -->
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     
     <style>
         /* --- CORE VIBE & FONTS --- */
@@ -22,7 +21,6 @@
             --accent-dark-cyan: #45a29e;
             --neon-pink: #ff00ff;
             --card-bg: rgba(11, 12, 16, 0.85);
-            --mc-green: #22c55e;
             --terminal-bg: #050505;
         }
 
@@ -116,6 +114,7 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
+            text-decoration: none;
         }
 
         .btn-cyber:hover {
@@ -157,23 +156,9 @@
             border-bottom: 1px solid rgba(102, 252, 241, 0.1);
         }
 
-        /* Page Switching Logic */
-        .page-section {
-            display: none;
-            animation: fadeIn 0.4s ease-in-out;
-        }
-
-        .page-section.active-flex {
-            display: flex;
-        }
-
-        .page-section.active-block {
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+        /* Scroll Offset for Anchor Links (damit der Header nichts verdeckt) */
+        section {
+            scroll-margin-top: 80px;
         }
 
     </style>
@@ -184,22 +169,22 @@
     <canvas id="canvas-bg"></canvas>
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 px-6 py-4 flex justify-between items-center bg-opacity-80 bg-[#0b0c10]">
-        <div class="text-xl font-bold tracking-tighter glitch-text cursor-pointer" onclick="switchPage('home')">
+    <nav class="fixed w-full z-50 px-6 py-4 flex justify-between items-center bg-opacity-90 bg-[#0b0c10]">
+        <a href="#home" class="text-xl font-bold tracking-tighter glitch-text cursor-pointer hover:no-underline text-white">
             <span class="text-cyan">&lt;</span>SHeynen.me<span class="text-cyan">/&gt;</span>
-        </div>
+        </a>
         <div class="hidden md:flex space-x-8 text-sm">
-            <button onclick="switchPage('home')" class="hover:text-cyan transition-colors bg-transparent border-none cursor-pointer text-gray-400 font-mono text-sm">./home</button>
-            <button onclick="switchPage('projects')" class="hover:text-cyan transition-colors bg-transparent border-none cursor-pointer text-gray-400 font-mono text-sm">./projects</button>
-            <button onclick="switchPage('contact')" class="hover:text-cyan transition-colors bg-transparent border-none cursor-pointer text-gray-400 font-mono text-sm">./contact</button>
+            <a href="#home" class="hover:text-cyan transition-colors text-gray-400 font-mono text-sm hover:no-underline">./home</a>
+            <a href="#projects" class="hover:text-cyan transition-colors text-gray-400 font-mono text-sm hover:no-underline">./projects</a>
+            <a href="#contact" class="hover:text-cyan transition-colors text-gray-400 font-mono text-sm hover:no-underline">./contact</a>
         </div>
-        <button onclick="switchPage('contact')" class="md:hidden text-cyan bg-transparent border-none cursor-pointer">
+        <a href="#contact" class="md:hidden text-cyan bg-transparent border-none cursor-pointer text-xl">
             <i class="fa-solid fa-terminal"></i>
-        </button>
+        </a>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="page-section active-flex flex-grow items-center justify-center px-6 pt-20 relative z-10">
+    <section id="home" class="min-h-screen flex items-center justify-center px-6 pt-20 relative z-10">
         <div class="max-w-4xl w-full">
             <p class="text-cyan mb-2 text-md font-light tracking-widest">PORTFOLIO INITIALIZED...</p>
             
@@ -216,9 +201,9 @@
             </p>
 
             <div class="flex flex-wrap gap-4">
-                <button onclick="switchPage('projects')" class="btn-cyber px-8 py-3 rounded text-sm font-bold cursor-pointer">
+                <a href="#projects" class="btn-cyber px-8 py-3 rounded text-sm font-bold cursor-pointer">
                     <i class="fa-solid fa-code-branch"></i> Projekte laden
-                </button>
+                </a>
                 <a href="https://github.com/NotSusmuel" target="_blank" class="btn-cyber btn-cyber-ghost px-8 py-3 rounded text-sm font-bold">
                     <i class="fa-brands fa-github"></i> GitHub
                 </a>
@@ -227,8 +212,8 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="page-section flex-grow py-20 px-6 relative z-10 mt-16">
-        <div class="max-w-6xl mx-auto">
+    <section id="projects" class="min-h-screen py-20 px-6 relative z-10 flex flex-col justify-center">
+        <div class="max-w-6xl mx-auto w-full">
             <div class="flex items-center mb-12">
                 <span class="text-cyan text-2xl mr-4">&gt;</span>
                 <h2 class="text-3xl font-bold text-white">Meine Projekte</h2>
@@ -348,7 +333,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="page-section flex-grow items-center justify-center px-6 relative z-10">
+    <section id="contact" class="min-h-screen flex items-center justify-center px-6 relative z-10">
         <div class="max-w-4xl w-full">
             <div class="flex items-center mb-12">
                 <span class="text-cyan text-2xl mr-4">&gt;</span>
@@ -363,19 +348,19 @@
                 </p>
                 
                 <div class="flex flex-wrap justify-center gap-6">
-                    <a href="mailto:heynen.t.samuel@gmail.com" class="group flex items-center gap-3 px-8 py-4 bg-white/5 rounded hover:bg-white/10 transition-all border border-transparent hover:border-cyan">
+                    <a href="mailto:heynen.t.samuel@gmail.com" class="group flex items-center gap-3 px-8 py-4 bg-white/5 rounded hover:bg-white/10 transition-all border border-transparent hover:border-cyan hover:no-underline">
                         <i class="fa-regular fa-envelope text-cyan text-xl group-hover:scale-110 transition-transform"></i>
-                        <span class="text-lg">Email schreiben</span>
+                        <span class="text-lg text-gray-300 group-hover:text-white">Email schreiben</span>
                     </a>
 
-                    <a href="https://github.com/NotSusmuel" target="_blank" class="group flex items-center gap-3 px-8 py-4 bg-white/5 rounded hover:bg-white/10 transition-all border border-transparent hover:border-cyan">
+                    <a href="https://github.com/NotSusmuel" target="_blank" class="group flex items-center gap-3 px-8 py-4 bg-white/5 rounded hover:bg-white/10 transition-all border border-transparent hover:border-cyan hover:no-underline">
                         <i class="fa-brands fa-github text-cyan text-xl group-hover:scale-110 transition-transform"></i>
-                        <span class="text-lg">GitHub</span>
+                        <span class="text-lg text-gray-300 group-hover:text-white">GitHub</span>
                     </a>
 
                     <button onclick="copyDiscord()" id="discord-btn" class="group flex items-center gap-3 px-8 py-4 bg-white/5 rounded hover:bg-white/10 transition-all border border-transparent hover:border-[#5865F2] cursor-pointer">
                         <i class="fa-brands fa-discord text-[#5865F2] text-xl group-hover:scale-110 transition-transform"></i>
-                        <span class="text-lg">@Claimingnine</span>
+                        <span class="text-lg text-gray-300 group-hover:text-white">@Claimingnine</span>
                     </button>
                 </div>
             </div>
@@ -389,27 +374,6 @@
 
     <!-- Scripts -->
     <script>
-        // --- 0. Page Switching Logic ---
-        function switchPage(pageId) {
-            // Hide all sections
-            document.querySelectorAll('.page-section').forEach(el => {
-                el.classList.remove('active-flex', 'active-block');
-            });
-
-            // Show target
-            const target = document.getElementById(pageId);
-            if (target) {
-                if (pageId === 'projects') {
-                    target.classList.add('active-block');
-                } else {
-                    target.classList.add('active-flex');
-                }
-            }
-            
-            // Scroll to top
-            window.scrollTo(0, 0);
-        }
-
         // --- 1. Typewriter Effect ---
         const textToType = "Schüler & Entwickler";
         const typeWriterElement = document.getElementById('typewriter');
