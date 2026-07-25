@@ -78,6 +78,21 @@
             box-shadow: 0 0 15px rgba(102, 252, 241, 0.15);
         }
 
+        .app-card {
+            background: linear-gradient(180deg, rgba(14, 18, 28, 0.96), rgba(8, 10, 16, 0.92));
+            border: 1px solid rgba(102, 252, 241, 0.14);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+        }
+
+        .app-card:hover {
+            border-color: rgba(102, 252, 241, 0.5);
+            box-shadow: 0 24px 70px rgba(0, 0, 0, 0.45), 0 0 24px rgba(102, 252, 241, 0.1);
+        }
+
+        .app-icon {
+            background: radial-gradient(circle at top, rgba(102, 252, 241, 0.22), rgba(102, 252, 241, 0.06));
+        }
+
         /* Buttons */
         .btn-cyber {
             background: transparent;
@@ -125,6 +140,7 @@
         <div class="hidden md:flex space-x-8 text-sm">
             <a href="#home" class="hover:text-cyan transition-colors text-gray-400 font-mono text-sm hover:no-underline">./home</a>
             <a href="#projects" class="hover:text-cyan transition-colors text-gray-400 font-mono text-sm hover:no-underline">./projects</a>
+            <a href="#apps" class="hover:text-cyan transition-colors text-gray-400 font-mono text-sm hover:no-underline">./apps</a>
             <a href="#contact" class="hover:text-cyan transition-colors text-gray-400 font-mono text-sm hover:no-underline">./contact</a>
         </div>
         <a href="#contact" class="md:hidden text-cyan bg-transparent border-none cursor-pointer text-xl">
@@ -171,6 +187,170 @@
                     <i class="fa-solid fa-code-commit text-4xl text-gray-600 mb-4"></i>
                     <p class="text-gray-400 text-lg">Momentan keine öffentlichen Projekte, schau später vorbei.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Apps Section -->
+    <section id="apps" class="min-h-screen py-20 px-6 relative z-10 flex flex-col justify-center">
+        <div class="max-w-6xl mx-auto w-full">
+            <div class="flex flex-col gap-4 mb-12">
+                <div class="flex items-center gap-4 flex-wrap">
+                    <span class="text-cyan text-2xl">&gt;</span>
+                    <h2 class="text-3xl font-bold text-white">Apps, die ich nutze und empfehle</h2>
+                </div>
+                <div class="flex flex-wrap items-center gap-3 text-sm">
+                    <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyan/30 bg-cyan/10 text-cyan">
+                        <i class="fa-solid fa-circle-info"></i>
+                        Nicht gesponsert
+                    </span>
+                    <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-gray-300">
+                        <i class="fa-regular fa-heart"></i>
+                        Nur meine persönliche Meinung
+                    </span>
+                </div>
+                <p class="text-gray-400 max-w-3xl leading-relaxed">
+                    Das sind die Apps, die ich selbst spannend finde und gerne weiterempfehle. Die Auswahl ist bewusst persönlich und kann sich mit meinen eigenen Workflows ändern.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <article class="app-card glass-card rounded-2xl p-6 flex flex-col h-full">
+                    <div class="flex items-start justify-between gap-4 mb-5">
+                        <div class="flex items-center gap-4">
+                            <div class="app-icon h-16 w-16 rounded-2xl flex items-center justify-center overflow-hidden border border-white/10">
+                                <img src="https://github.com/rukamori/ArchiveTune/blob/main/fastlane/metadata/android/en-US/images/icon.png?raw=1" alt="ArchiveTune icon" class="h-full w-full object-cover">
+                            </div>
+                            <div>
+                                <p class="text-xs uppercase tracking-[0.3em] text-cyan mb-1">Featured</p>
+                                <h3 class="text-2xl font-bold text-white">ArchiveTune</h3>
+                            </div>
+                        </div>
+                        <span class="text-xs px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300">Open Source</span>
+                    </div>
+
+                    <p class="text-gray-400 leading-relaxed mb-6 flex-grow">
+                        Ein kompakter Musik-Player für lokale Archive mit klarer Oberfläche und Fokus auf Kontrolle statt Ablenkung.
+                    </p>
+
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 rounded-full bg-cyan/10 text-cyan text-sm border border-cyan/20">Clean library view</span>
+                        <span class="px-3 py-1 rounded-full bg-white/5 text-gray-300 text-sm border border-white/10">Offline-friendly</span>
+                        <span class="px-3 py-1 rounded-full bg-white/5 text-gray-300 text-sm border border-white/10">Open source</span>
+                    </div>
+
+                    <div class="space-y-3 mb-6 text-sm text-gray-300">
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-cyan mt-1"></i>
+                            <span>Übersichtliche Bibliothek und schnelle Navigation.</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-cyan mt-1"></i>
+                            <span>Fokussiert auf lokales Archiv- und Musikmanagement.</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-cyan mt-1"></i>
+                            <span>Ideal, wenn du einfache Bedienung ohne Ballast willst.</span>
+                        </div>
+                    </div>
+
+                    <a href="https://github.com/rukamori/ArchiveTune" target="_blank" class="btn-cyber px-5 py-3 rounded-lg text-sm font-bold justify-center">
+                        <i class="fa-brands fa-github"></i> Projekt ansehen
+                    </a>
+                </article>
+
+                <article class="app-card glass-card rounded-2xl p-6 flex flex-col h-full border-cyan/30">
+                    <div class="flex items-start justify-between gap-4 mb-5">
+                        <div class="flex items-center gap-4">
+                            <div class="app-icon h-16 w-16 rounded-2xl flex items-center justify-center overflow-hidden border border-white/10">
+                                <img src="https://www.luckypatchers.com/wp-content/uploads/2016/03/Lucky-patcher-logo.webp" alt="Lucky Patcher icon" class="h-full w-full object-cover">
+                            </div>
+                            <div>
+                                <p class="text-xs uppercase tracking-[0.3em] text-pink mb-1">Featured</p>
+                                <h3 class="text-2xl font-bold text-white">Lucky Patcher</h3>
+                            </div>
+                        </div>
+                        <span class="text-xs px-3 py-1 rounded-full bg-pink/10 border border-pink/20 text-pink">Utility</span>
+                    </div>
+
+                    <p class="text-gray-400 leading-relaxed mb-6 flex-grow">
+                        Eine fortgeschrittene Android-Utility für App-Management und Patch-Workflows, mit einem sehr technischen Fokus.
+                    </p>
+
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 rounded-full bg-pink/10 text-pink text-sm border border-pink/20">App management</span>
+                        <span class="px-3 py-1 rounded-full bg-white/5 text-gray-300 text-sm border border-white/10">Advanced workflows</span>
+                        <span class="px-3 py-1 rounded-full bg-white/5 text-gray-300 text-sm border border-white/10">Power-user tool</span>
+                    </div>
+
+                    <div class="space-y-3 mb-6 text-sm text-gray-300">
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-pink mt-1"></i>
+                            <span>Gute Wahl, wenn du viele Aktionen in einem Tool bündeln willst.</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-pink mt-1"></i>
+                            <span>Stark auf erweiterte App-Analyse und Anpassung ausgerichtet.</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-pink mt-1"></i>
+                            <span>Nicht für alle Nutzer gedacht, aber sehr markant im Funktionsumfang.</span>
+                        </div>
+                    </div>
+
+                    <a href="https://www.luckypatchers.com/" target="_blank" class="btn-cyber px-5 py-3 rounded-lg text-sm font-bold justify-center">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Website öffnen
+                    </a>
+                </article>
+
+                <article class="app-card glass-card rounded-2xl p-6 flex flex-col h-full">
+                    <div class="flex items-start justify-between gap-4 mb-5">
+                        <div class="flex items-center gap-4">
+                            <div class="app-icon h-16 w-16 rounded-2xl flex items-center justify-center overflow-hidden border border-white/10">
+                                <img src="https://github.com/Droid-ify/client/blob/main/metadata/en-US/images/icon.png?raw=1" alt="Droid-ify icon" class="h-full w-full object-cover">
+                            </div>
+                            <div>
+                                <p class="text-xs uppercase tracking-[0.3em] text-cyan mb-1">Featured</p>
+                                <h3 class="text-2xl font-bold text-white">Droid-ify</h3>
+                            </div>
+                        </div>
+                        <span class="text-xs px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300">F-Droid client</span>
+                    </div>
+
+                    <p class="text-gray-400 leading-relaxed mb-6 flex-grow">
+                        Ein moderner F-Droid-Client mit klarer Gestaltung, sauberer Struktur und einer angenehmen Update-Erfahrung.
+                    </p>
+
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 rounded-full bg-cyan/10 text-cyan text-sm border border-cyan/20">Modern UI</span>
+                        <span class="px-3 py-1 rounded-full bg-white/5 text-gray-300 text-sm border border-white/10">Fast updates</span>
+                        <span class="px-3 py-1 rounded-full bg-white/5 text-gray-300 text-sm border border-white/10">F-Droid friendly</span>
+                    </div>
+
+                    <div class="space-y-3 mb-6 text-sm text-gray-300">
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-cyan mt-1"></i>
+                            <span>Sehr aufgeräumte Oberfläche für Paketverwaltung und Updates.</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-cyan mt-1"></i>
+                            <span>Wirkt modern, ohne kompliziert zu werden.</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-cyan mt-1"></i>
+                            <span>Passt gut, wenn du freie Apps aktiv nutzt und pflegst.</span>
+                        </div>
+                    </div>
+
+                    <a href="https://github.com/Droid-ify/client" target="_blank" class="btn-cyber px-5 py-3 rounded-lg text-sm font-bold justify-center">
+                        <i class="fa-brands fa-github"></i> Projekt ansehen
+                    </a>
+                </article>
+            </div>
+
+            <div class="mt-8 glass-card rounded-2xl p-5 border border-white/10 bg-white/5 text-sm text-gray-300 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+                <span class="flex items-center gap-2"><i class="fa-solid fa-shield-halved text-cyan"></i> Keine bezahlte Empfehlung.</span>
+                <span class="text-gray-400">Ich teile hier nur Apps, die ich selbst interessant finde oder nutze.</span>
             </div>
         </div>
     </section>
